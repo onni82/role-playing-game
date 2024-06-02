@@ -5,23 +5,23 @@
     Code is available at https://github.com/onni82/role-playing-game
 */
 
-#include <iostream> // för att kunna använda cout och cin
-#include <string> // för att kunna använda stringvariabler
-#include <cctype> // för att kunna använda tolower()
-#include <vector> // för att kunna använda vectorarrayer
-#include <stdlib.h> // för att kunna använda system("cls")
-#include <conio.h> // för att kunna använda getch() på Windows
-#include <algorithm> // för att kunna använda sort()
+#include <iostream> // for cout and cin
+#include <string> // for string variables
+#include <cctype> // for using tolower() for example
+#include <vector> // for using vector arrays
+#include <stdlib.h> // for using system("cls")
+#include <conio.h> // for using getch() on Windows
+#include <algorithm> // for using sort()
 
 using namespace std;
 
-// denna struct kan skapa objekt som syns i ens väska
-// name är namnet på objektet, effect är objektets effekt och amount är antalet man har av det objektet
+// this struct kan create objects that are in your inventory
+// property definitions: name is the name of the item, effect is the effect of the item and amount is the amount that you have of that specific item
 struct Item {
     string name;
     int amount;
 
-    // definierar en funktion som jämför objektets namn med det objekt man söker efter i sin väska
+    // defines a funktion that compares the object's name with the object your searching for in your inventory
     static bool compareByName(const Item& p, const string& targetName) {
         return p.name < targetName;
     }
@@ -63,7 +63,7 @@ int binarySearch(const vector<T>& arr, const string& targetName, bool (*compareF
 
     return -1; // objektet hittades inte
 }
-/*pseudokod för ovanstående kod:
+/*pseudo code for above part:
 left = 0
 right = array size -1
 
@@ -346,15 +346,15 @@ int main(int argc, char* argv[]) {
     cout << "You feel like resting by a tree, but you notice it seems alive, like it can talk.\n";
     ClearScreen();
 
-    // skapar den tredje bossen som är ett vandrande träd (så kallad ent)
+    // creates the ent entity for the upcoming battle
     Entity ent;
     ent.name = "Ent";
     ent.health = 30;
     ent.level = 1;
     ent.currentExp = 0;
 
-    sort(inventory.begin(), inventory.end(), compareItems); // sorterar ens väska
-    BattleEntity(user, ent, inventory); // startar en strid med det vandrande träd
+    sort(inventory.begin(), inventory.end(), compareItems); // sorts the inventory
+    BattleEntity(user, ent, inventory); // starts a battle with the ent
     ClearScreen();
 
     cout << "Congratulations! You finished the game.\n";
