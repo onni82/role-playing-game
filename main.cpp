@@ -1,9 +1,8 @@
 /*
-    Kurs: Programmering 1 PRRPRR01 100p
-    Uppgift: Projektuppgift
-    Elev: Onni Bucht
+    Project name: Role Playing Game
+    Author: Onni Bucht
 
-    Koden laddas även upp på https://github.com/onni82/projektuppgift
+    Code is available at https://github.com/onni82/role-playing-game
 */
 
 #include <iostream> // för att kunna använda cout och cin
