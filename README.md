@@ -4,7 +4,7 @@
 
 # Plans 📝
  * Translate all the original comments from Swedish to English.
- * Store item descriptions and item effects in an SQLite database or as an array, instead of writing loads of if-statements.
+ * Store item descriptions and item effects in an SQLite database or as an array, instead of writing loads of if-statements. Will have to update void UseItem() and string GetItemDescription().
  * Save feature.
  * Store separate game stories that can be loaded as files? A BIG MAYBE.
 
