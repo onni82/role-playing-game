@@ -122,7 +122,7 @@ void LevelUp(Entity &player) {
 // Function that adds an item to the inventory
 // Arguments that are entered in the function's call are the name, effect and amount of the particular item you want to add
 void AddItem(vector<Item> &itemList, string nameOfItem, int amountOfItem) {
-    int result = binarySearch(itemList, nameOfItem, &Item::compareByName); // söker efter objektet i ens väska
+    int result = binarySearch(itemList, nameOfItem, &Item::compareByName); // Searches for the item in the inventory
 
     if (result != -1) { // If the item is found in the inventory
         itemList[result].amount += amountOfItem;
@@ -146,12 +146,12 @@ void AddItem(vector<Item> &itemList, string nameOfItem, int amountOfItem) {
     }
 }
 
-// Funktion för att kunna använda objekt som finns i ens väska
-// Argumenten är den array man vill uppdatera efter användning av objekt, namnet på objektet och den entitet som objektet ska påverka
+// Function to be able to use items that are in one's inventory
+// The arguments are: the array/inventory you want to update after using the item, the name of the item and the entity that the item should affect
 void UseItem(vector<Item> &itemList, string nameOfItem, Entity &player) {
-    int result = binarySearch(itemList, nameOfItem, &Item::compareByName); // söker efter objektet i ens väska
+    int result = binarySearch(itemList, nameOfItem, &Item::compareByName); // Searches for the item in one's inventory
 
-    if (result != -1) { // Om objektet hittas i väskan
+    if (result != -1) { // If the item is found in the inventory
         if (nameOfItem == "Potion") {
             player.health += 15;
         } else if (nameOfItem == "Greater Potion") {
@@ -162,13 +162,13 @@ void UseItem(vector<Item> &itemList, string nameOfItem, Entity &player) {
 
         cout << "Used " << nameOfItem << " on " << player.name << ".\n";
 
-        if (itemList[result].amount == 0) { // Kollar om det är noll i antal av objektet
-            itemList.erase(itemList.begin() + result); // tar bort objektet från väskan
+        if (itemList[result].amount == 0) { // Checks if the item's amount reaches zero
+            itemList.erase(itemList.begin() + result); // Removes the item from the inventory
         }
     }
 }
 
-// Funktion som berättar vad ett objekt (som kan finnas i väskan) ger för effekt vid användning
+// Function that tells what effect an object (which can be in the inventory) gives when used
 string GetItemDescription(string nameOfItem) {
     string itemDescription;
     if (nameOfItem == "Potion") {
