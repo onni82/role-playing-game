@@ -120,7 +120,7 @@ void LevelUp(Entity &player) {
 }
 
 // Function that adds an item to the inventory
-// Arguments that are entered in the function's call are the name, effect and amount of the particular item you want to add
+// Arguments in call: the array/inventory in where to add the item, name of the item and amount of the particular item you want to add
 void AddItem(vector<Item> &itemList, string nameOfItem, int amountOfItem) {
     int result = binarySearch(itemList, nameOfItem, &Item::compareByName); // Searches for the item in the inventory
 
